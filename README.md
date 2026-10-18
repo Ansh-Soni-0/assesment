@@ -57,6 +57,8 @@ assessment/
 │       ├── App.jsx
 │       ├── main.jsx
 │       └── index.css
+├── docs/
+│   ├── Newtonite_Operations_User_Guide.docx
 ├── server/
 │   ├── package.json
 │   └── src/
@@ -228,13 +230,6 @@ application has successfully written data.
 
 ## Troubleshooting
 
-### Vite cannot find an import
-
-Check that import paths and filenames match exactly, including
-capitalization and extensions (`.js` or `.jsx`). The frontend should be
-opened using the URL printed by Vite, not the VS Code Live Server
-extension.
-
 ### `react/jsx-runtime` cannot be resolved or JSX syntax errors appear
 
 Run the app through Vite using `npm run dev` from the project root. Do
@@ -242,12 +237,6 @@ not open React source files directly in the browser. Ensure
 `client/index.html` points to `/src/main.jsx` and that
 `client/src/main.jsx` contains normal JSX source rather than manually
 compiled `_jsx(...)` output.
-
-### Vite warns about `#` in the project path
-
-Move or rename the project folder so its full path does not contain a
-`#` character, then reopen the renamed folder in VS Code and restart the
-development server.
 
 ### MongoDB connection fails
 
@@ -272,22 +261,15 @@ match.
 -   Configure production CORS origins and secure deployment settings
     before public release.
 
-## Current Status
+## 📘 User Guide
 
-This repository contains the JavaScript version of the project (`.js`
-and `.jsx` files). Run the setup, build, and test commands in your own
-environment to verify the current state. A successful MongoDB connection
-alone does not confirm that every frontend workflow, API endpoint, or
-test is working.
+New to Newtonite Operations? Read the user guide for step-by-step instructions on how to use the application.
 
-## Contributing
+The guide explains:
+- How to sign in and navigate the dashboard
+- How to create and manage work items
+- How to assign tasks and update their status
+- How to manage teams and users
+- Troubleshooting common issues
 
-1.  Create a branch for your change.
-2.  Make the change and test it locally.
-3.  Commit your changes with a descriptive message.
-4.  Open a pull request describing the change and validation performed.
-
-## License
-
-No license has been specified. Add a `LICENSE` file before allowing
-others to reuse or distribute this project.
+**Download the complete user guide:** [Newtonite Operations User Guide](docs/Newtonite_Operations_User_Guide.docx)
