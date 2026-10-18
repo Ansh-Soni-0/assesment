@@ -1,0 +1,16 @@
+import { Router } from 'express';
+import { getTeams, getTeamById, createTeam, updateTeam, addMember, updateMemberRole, removeMember, } from '../controllers/teamController.js';
+import { authenticate } from '../middleware/auth.js';
+import { requireGlobalRole } from '../middleware/rbac.js';
+import { validateBody } from '../middleware/validate.js';
+import { createTeamSchema, updateTeamSchema, addMemberSchema, updateMemberSchema, } from '../schemas/teamSchemas.js';
+const router = Router();
+router.use(authenticate);
+router.get('/', getTeams);
+router.get('/:id', getTeamById);
+router.post('/', requireGlobalRole(['ADMIN', 'OPERATOR']), validateBody(createTeamSchema), createTeam);
+router.patch('/:id', validateBody(updateTeamSchema), updateTeam);
+router.post('/:id/members', validateBody(addMemberSchema), addMember);
+router.patch('/:id/members/:userId', validateBody(updateMemberSchema), updateMemberRole);
+router.delete('/:id/members/:userId', removeMember);
+export default router;
