@@ -138,7 +138,7 @@ Open `.env` and configure the values for your environment:
 ``` dotenv
 PORT=5000
 NODE_ENV=development
-MONGODB_URI=mongodb://127.0.0.1:27017/newtonite_ops
+MONGODB_URI=mongodb://127.0.0.1:27017/newtonite_EMS
 JWT_SECRET=replace-this-with-a-long-random-secret
 JWT_EXPIRES_IN=7d
 CLIENT_ORIGIN=http://localhost:3000
